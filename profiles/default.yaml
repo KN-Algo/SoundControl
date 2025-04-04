@@ -1,0 +1,20 @@
+C1: press_key:0x41  # A
+C#1: press_key:0x57  # W
+D1: press_key:0x53  # S
+D#1: press_key:0x44  # D
+E1: mouse_move_up
+F1: mouse_move_down
+F#1: mouse_move_left
+G1: mouse_move_right
+G#1: press_key:0x20  # Spacebar
+A1: press_key:0x10  # Shift
+A#1: press_key:0x45  # E
+B1: press_key:0x09  # Tab
+C2: press_key:0x4D  # M
+C#2: modify_sensitivity:10
+D2: reset_sensitivity
+D#2: modify_sensitivity:-10
+E2: mouse_left_click
+F2: mouse_middle_click
+F#2: mouse_right_click
+F3: press_key:0x58  # X

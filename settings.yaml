@@ -1,0 +1,4 @@
+amplitude_threshold: 950
+input_device: null
+sensitivity: 30
+trigger_cooldown: 0.3
