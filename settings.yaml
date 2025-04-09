@@ -1,4 +1,5 @@
-amplitude_threshold: 950
-input_device: Microphone (Realtek(R) Audio)
+amplitude_threshold: 300
+input_device_index: 1
+num_notes: 5
 sensitivity: 30
 trigger_cooldown: 0.3
