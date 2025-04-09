@@ -18,3 +18,5 @@ E2: mouse_left_click
 F2: mouse_middle_click
 F#2: mouse_right_click
 F3: press_key:0x58  # X
+D6: press_key:0x51  # Qxx
+D#6: press_key:0x52  # R
