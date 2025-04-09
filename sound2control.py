@@ -180,7 +180,7 @@ def frequency_to_note(freq): return piano_keys[find_nearest_key(freq)]
 
 # Inicjalizacja PyAudio
 p = pyaudio.PyAudio()
-input_index = Nonex
+input_index = None
 if INPUT_DEVICE_NAME:
     for i in range(p.get_device_count()):
         info = p.get_device_info_by_index(i)
