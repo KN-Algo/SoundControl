@@ -8,6 +8,7 @@ from time import time
 import os
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
+import time
 
 CHUNK = 4096  # Rozmiar bloku audio
 RATE = 44100
@@ -121,6 +122,8 @@ def handle_action(action_str):
     if action_str.startswith("press_key:"):
         hex_code = int(action_str.split(":")[1], 16)
         press_key(hex_code)
+        time.sleep(0.05)
+        release_key(hex_code)
     elif action_str.startswith("modify_sensitivity:"):
         modify_sensitivity(int(action_str.split(":")[1]))
     else:
@@ -161,12 +164,13 @@ def process_audio(lines=None, peak_text=None):
     if audio_queue.empty(): return
     # print("Przetwarzanie dźwięku...")
     audio_data = audio_queue.get()
-    # volume = np.max(np.abs(audio_data))
-    # if volume < AMPLITUDE_THRESHOLD:
+    volume = np.max(np.abs(audio_data)) * 1000
+    #print(volume)
+    if volume < AMPLITUDE_THRESHOLD:
     #     print(f"🔇 Cisza lub zbyt niski poziom dźwięku")
-    #     if lines: lines.set_ydata(np.zeros_like(frequencies))
-    #     if peak_text: peak_text.set_text("")
-    #     return
+        if lines: lines.set_ydata(np.zeros_like(frequencies))
+        if peak_text: peak_text.set_text("")
+        return
     mono = audio_data[:, 0]
     fft_data = np.abs(np.fft.rfft(mono)) / CHUNK
     fft_data = fft_data / np.max(fft_data)
@@ -183,7 +187,7 @@ def process_audio(lines=None, peak_text=None):
 
     notes = [frequency_to_note(f) for f in filtered_freqs if frequency_to_note(f)]
         
-    now = time()
+    now = time.time()
     for note in notes:
         # print(f"🔊 Wykryto dźwięk: {note} (amplituda: {volume:.2f})")
         action = config.get(note)

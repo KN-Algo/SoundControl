@@ -1,4 +1,5 @@
-amplitude_threshold: 300
+amplitude_threshold: 50
+input_device: Mikrofon (Elgato Wave:3)
 input_device_index: 1
 num_notes: 5
 sensitivity: 30
