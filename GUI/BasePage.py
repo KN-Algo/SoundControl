@@ -16,7 +16,7 @@ class BasePage(QWidget):
 
     BACKGROUND_COLOR = "rgb(43, 45, 48)"
     BUTTON_TEXT_COLOR = "rgb(107, 61, 216)"
-    BUTTON_BG_COLOR = "rgba(114, 137, 218, 0)"
+    BUTTON_BG_COLOR = "darkgray"
     BUTTON_HOVER_BG_COLOR = "rgb(3,3,3)"
     BUTTON_BORDER_RADIUS = "20px"
     BUTTON_FONT = QFont("Noto Sans", 20, QFont.Bold)
